@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Mark for Moodle trace cleanup
-[ -n "$CI" ] && echo "VMCHECKER_TRACE_CLEANUP"
-
 EXECUTABLE="../src/perfect"
 TIMEOUT_DURATION=10
 SCORE=0
