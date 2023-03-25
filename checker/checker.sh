@@ -10,7 +10,7 @@ test_err()
     local temp_output=''
     temp_output="$(mktemp)"
 
-    timeout "$TIMEOUT_DURATION" bash -c "$EXECUTABLE {} > $temp_output 2>&1"
+    timeout "$TIMEOUT_DURATION" bash -c "$EXECUTABLE > $temp_output 2>&1"
 
     diff -Zq "$temp_output" "./references/ref1" > /dev/null 2>&1
     return $?
