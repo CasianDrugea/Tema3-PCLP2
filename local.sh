@@ -249,8 +249,9 @@ checker_main() {
     # otherwise stick to relative paths.
     # It is guaranteed that the current working directory in which checker.sh will run is  $CI_PROJECT_DIR/checker.
     docker run --rm \
+            -e CI_PROJECT_DIR="$MOUNT_PROJECT_DIRECTORY" \
             --mount type=bind,source="$tmpdir",target="$MOUNT_PROJECT_DIRECTORY" \
-            "$image_name" /bin/bash -c "rm -rf /usr/local/bin/bash; cd \"$MOUNT_PROJECT_DIRECTORY/checker\"; \"$MOUNT_PROJECT_DIRECTORY/checker/checker.sh\" \"${script_args[@]}\"" # remove bash middleware script
+            "$image_name" /usr/local/bin/bash
 
     if [ -n "$remove_image" ] ; then
         LOG_INFO "Cleaning up..."
