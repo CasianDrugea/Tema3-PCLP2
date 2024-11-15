@@ -1,4 +1,4 @@
-FROM jokeswar/base-ctl
+FROM jokeswar/base-ctl:latest
 
 RUN echo "Hello from Docker"
 
