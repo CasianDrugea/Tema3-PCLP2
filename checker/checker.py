@@ -26,9 +26,9 @@ tasksNo = 4
 
 runExec = "./"
 checker = "checker"
-taskDir = "task-"
+taskDir = "../src/task-"
 linterDir = "linter"
-readme_path = "README.md"
+readme_path = "../src/README.md"
 
 zipName = "VMChecker_Homework_3"
 
@@ -42,7 +42,7 @@ def test_task(taskNo):
 
     taskString = f"{taskDir}{taskNo}/"
     procString = runExec + taskString + checker
-    rc = subprocess.call(f"make -C {taskString} > /dev/null 2> /dev/null", shell=useShell)
+    rc = subprocess.call(f"make -C {taskString}", shell=useShell)
 
     if rc != 0:
         sys.stderr.write("make failed with status %d\n" % rc)
@@ -58,6 +58,8 @@ def test_task(taskNo):
     taskScore = re.findall(fr'\d+', re.findall(fr'TASK {taskNo} SCORE: \d+', checkerOutput)[0])[1]
 
     points += float(taskScore)
+    
+    rc = subprocess.call(f"make -C {taskString} clean", shell=useShell)
 
 def run_linter():
     global linter_weight
@@ -96,7 +98,7 @@ def check_readme():
 #=======================================================================#
 
 if args.zip:
-    rc = subprocess.call(f"zip -r {zipName} */*.asm README", shell=useShell)
+    rc = subprocess.call(f"cd ..; zip -r {zipName} */*.asm src/README.md", shell=useShell)
     exit(rc)
 
 points = 0
