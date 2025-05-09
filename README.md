@@ -5,8 +5,8 @@
  - Ilinca-Ioana Strutu
 
  ## Termen limita
- - $\textbf{soft: 25.05.2025}$
- - $\textbf{hard: 28.05.2025}$
+ - $\textbf{soft: 26.05.2025}$
+ - $\textbf{hard: TBD}$
 
 ## Minipoveste
 Dupa perioada de 1 mai, 2 mai, trebuia sa vina si ... tema 3 la IOCLA! <p>
@@ -45,6 +45,6 @@ cosminel@iocla:~/tema-3-2025-iocla/src$/linter$ ./linter-script-file
 ```
 Atentie, checker-ul verifica prezenta erorilor de linting, iar, in caz afirmativ, veti primi ${\textbf{0p per total!}}$
 
-## README
-Pentru usurinta corectarii si intelegerii rezolvarilor, va trebui sa explicati intr-un `README` abordarile voastre. <p>
+## README.md
+Pentru usurinta corectarii si intelegerii rezolvarilor, va trebui sa explicati intr-un `README.md` abordarile voastre. <p>
 Atentie, checker-ul verifica prezenta fisierului README, iar, in caz negativ, veti primi ${\textbf{0p per total!}}$
